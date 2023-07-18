@@ -13,4 +13,8 @@ int main()
     std::cout << (int)y.rules->GetRules() << std::endl;
     y.UpdateRules();
     std::cout << (int)y.rules->GetRules() << std::endl;
+    std::cout << (int)y.rules->CompareRule(32768) << std::endl;
+    std::cout << (int)y.rules->CompareRule(31768) << std::endl;
+    std::cout << (int)y.rules->CompareRule(1, 15) << std::endl;
+    std::cout << (int)y.rules->CompareRule(0, 15) << std::endl;
 }

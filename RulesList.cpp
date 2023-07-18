@@ -1,6 +1,6 @@
 #include "RulesList.h"
 
-short RulesList::GetRules()
+uint16_t RulesList::GetRules()
 {
 	return data;
 }

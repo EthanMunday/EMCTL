@@ -5,7 +5,7 @@ class RulesList
 	uint16_t data;
 
 public:
-	short GetRules();
+	uint16_t GetRules();
 	bool UpdateRule(uint16_t inRuleValue);
 	bool UpdateRule(bool inRuleValue, uint8_t inRuleSlot);
 	bool CompareRule(uint16_t inRuleValue);

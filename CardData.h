@@ -1,16 +1,14 @@
 #pragma once
+#include <algorithm>
+
 class CardData
 {
-	unsigned char id;
-	unsigned short rules;
-
+	uint8_t values;
 public:
-	unsigned char GetType();
-	unsigned char GetSubtype();
-	unsigned char GetValue();
-	unsigned short GetRule();
-	void UpdateRule(unsigned char inRuleValue);
-	void UpdateRule(bool inRuleValue, unsigned char inRuleSlot);
-	CardData(unsigned char inType, unsigned char inSubType, unsigned char inValue);
+	uint8_t GetID();
+	uint8_t GetType();
+	uint8_t GetSubtype();
+	uint8_t GetValue();
+	CardData(uint8_t inType, uint8_t inSubType, uint8_t inValue);
 };
 

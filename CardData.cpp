@@ -1,41 +1,28 @@
 #include "CardData.h"
 
-unsigned char CardData::GetType()
+uint8_t CardData::GetID()
 {
-    return (id >> 6) & 3;
+    return values & 255;
 }
 
-unsigned char CardData::GetSubtype()
+uint8_t CardData::GetType()
 {
-    return (id >> 4) & 3;
+    return (values >> 6) & 3;
 }
 
-unsigned char CardData::GetValue()
+uint8_t CardData::GetSubtype()
 {
-    return id & 15;
+    return (values >> 4) & 3;
 }
 
-unsigned short CardData::GetRule()
+uint8_t CardData::GetValue()
 {
-    return rules;
+    return values & 15;
 }
-
-void CardData::UpdateRule(unsigned char inRuleValue)
+CardData::CardData(uint8_t inType, uint8_t inSubType, uint8_t inValue)
 {
-    rules = inRuleValue;
-}
-
-void CardData::UpdateRule(bool inRuleValue, unsigned char inRuleSlot)
-{
-    if (inRuleValue) rules |= 1 << inRuleSlot;
-    else rules &= ~(1 << inRuleSlot);
-}
-
-CardData::CardData(unsigned char inType, unsigned char inSubType, unsigned char inValue)
-{
-    id = 0;
-    rules = 0;
-    id |= (inType << 6);
-    id |= (inSubType << 4);
-    id |= (inValue);
+    values = 0;
+    values |= (inType << 6);
+    values |= (inSubType << 4);
+    values |= (inValue);
 }

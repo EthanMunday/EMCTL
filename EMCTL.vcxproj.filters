@@ -24,12 +24,24 @@
     <ClCompile Include="CardTemplate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Hand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RulesList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CardData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CardTemplate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Hand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RulesList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

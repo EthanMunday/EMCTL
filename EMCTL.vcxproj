@@ -150,10 +150,14 @@
     <ClCompile Include="CardData.cpp" />
     <ClCompile Include="CardTemplate.cpp" />
     <ClCompile Include="EMCTL.cpp" />
+    <ClCompile Include="Hand.cpp" />
+    <ClCompile Include="RulesList.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CardData.h" />
     <ClInclude Include="CardTemplate.h" />
+    <ClInclude Include="Hand.h" />
+    <ClInclude Include="RulesList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

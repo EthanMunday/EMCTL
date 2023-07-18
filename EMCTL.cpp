@@ -1,5 +1,6 @@
 #include <iostream>
 #include "CardData.h"
+#include "CardTemplate.h"
 
 int main()
 {
@@ -8,4 +9,8 @@ int main()
     std::cout << (int)x.GetSubtype() << std::endl;
     std::cout << (int)x.GetValue() << std::endl;
 
+    CardTemplate y = CardTemplate(0, 1, 15);
+    std::cout << (int)y.rules->GetRules() << std::endl;
+    y.UpdateRules();
+    std::cout << (int)y.rules->GetRules() << std::endl;
 }

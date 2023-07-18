@@ -1,27 +1,32 @@
 #include "CardTemplate.h"
 
-short CardTemplate::GetRules()
+
+void CardTemplate::BindFunction(std::function<bool()> function, uint8_t index)
 {
-	return *rules >> 8;
+	ruleFunctions[index] = function;
 }
 
-bool CardTemplate::UpdateRule(uint16_t inRuleValue)
+void CardTemplate::UpdateRules()
 {
-	*rules &= ~(65535);
-	*rules |= inRuleValue;
-	return true;
+	for (uint8_t x = 0; x < 10; x++)
+	{
+		if (ruleFunctions[x])
+		{
+			rules->UpdateRule(ruleFunctions[x](), x);
+		}
+	}
 }
 
-bool CardTemplate::UpdateRule(bool inRuleValue, uint8_t inRuleSlot)
+bool CardTemplate::TestFunction()
 {
-	if (inRuleValue) *rules |= 1 << (inRuleSlot);
-	else *rules &= ~(1 << (inRuleSlot));
 	return true;
 }
 
 CardTemplate::CardTemplate(uint8_t inType, uint8_t inSubType, uint8_t inValue)
 {
 	data = std::make_unique<CardData>(inType, inSubType, inValue);
-	rules = std::make_unique<uint16_t>();
-	*rules = 0;
+	rules = std::make_unique<RulesList>();
+	rules->UpdateRule(0);
+	ruleFunctions = std::make_unique<std::function<bool()>[]>(10);
+	BindFunction(std::bind(&CardTemplate::TestFunction, this), 1);
 }

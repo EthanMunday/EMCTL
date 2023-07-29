@@ -7,7 +7,7 @@ uint16_t RulesList::GetRules()
 
 bool RulesList::UpdateRule(uint16_t inRuleValue)
 {
-	data &= ~(65535);
+	data = 0;
 	data |= inRuleValue;
 	return true;
 }

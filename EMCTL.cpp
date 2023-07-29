@@ -1,6 +1,7 @@
 #include <iostream>
 #include "CardData.h"
 #include "CardTemplate.h"
+#include "Hand.h"
 
 int main()
 {
@@ -14,7 +15,7 @@ int main()
     y.UpdateRules();
     std::cout << (int)y.rules->GetRules() << std::endl;
     std::cout << (int)y.rules->CompareRule(32768) << std::endl;
-    std::cout << (int)y.rules->CompareRule(31768) << std::endl;
     std::cout << (int)y.rules->CompareRule(1, 15) << std::endl;
-    std::cout << (int)y.rules->CompareRule(0, 15) << std::endl;
+
+    Hand<CardTemplate>* z = new Hand<CardTemplate>();
 }

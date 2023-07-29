@@ -1,7 +1,6 @@
 #pragma once
 #include "CardData.h"
 #include "RulesList.h"
-#include <string>
 #include <functional>
 
 class CardTemplate
